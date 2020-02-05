@@ -1,0 +1,7 @@
+# roles/deploy/tasks/main.yml
+---
+  - name:  Tagged Directory
+    file:
+      path: "/var/www/{{ tag_name }}"
+      recurse: yes
+      state: directory

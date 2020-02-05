@@ -1,0 +1,15 @@
+#!/usr/bin/ansible-playbook
+
+# create_ec2.yml
+---
+  - name: Provision server
+    hosts: all
+    gather_facts: false
+    tags: provisioning
+
+  # Task that will be used to deploy
+    roles:
+      - rsync
+      - taggeddirectory
+      - deploy
+      - environment

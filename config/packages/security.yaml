@@ -1,0 +1,12 @@
+security:
+
+  firewalls:
+      api:
+          pattern: ^/api/
+          stateless: true
+          guard:
+            authenticators:
+              - App\Security\TokenAuthenticator
+
+  access_control:
+      - { path: '^/api', roles: ROLE_API }

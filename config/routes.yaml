@@ -1,0 +1,8 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+user_signup:
+  path: /api/register
+  controller: App\Application\Handler\User\SignUpUserHandler
+  methods: POST

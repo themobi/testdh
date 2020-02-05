@@ -1,0 +1,33 @@
+# These files are generated during building or development and are intentionally
+# untracked to ignore by Git. For other development environment specific files,
+# such as editor configuration, a good practice is to exclude them using the
+# .git/info/exclude in the cloned repository or a global .gitignore file.
+
+# ------------------------------------------------------------------------------
+# Common files ignored across the repository
+# ------------------------------------------------------------------------------
+
+# Backup copies created by various editors or development tools
+*~
+
+# Patches downloaded to patch files or to apply open source contributions
+*.patch
+
+# Swap files created by editors and tools to indicate a locked file
+*.swp
+
+# Envoirenment file
+.env
+
+# Third-party packages directory
+/vendor/
+
+# Build
+/build/
+
+# Log files
+*.log
+
+/.idea
+
+/var/

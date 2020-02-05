@@ -1,0 +1,26 @@
+# roles/environment/tasks/main.yml
+---
+  - name: Set Enviorenment File
+    lineinfile:
+      dest: "{{ deploy_path }}/.env"
+      regexp: "{{ item.regexp }}"
+      line: "{{ item.line }}"
+    with_items:
+      - { regexp: '^SERVERNAME', line: "SERVERNAME={{ SERVERNAME }}" }
+      - { regexp: '^DB_HOST', line: "DB_HOST={{ DB_HOST }}" }
+      - { regexp: '^DB_PORT', line: "DB_PORT={{ DB_PORT }}" }
+      - { regexp: '^DB_USER', line: "DB_USER={{ DB_USER }}" }
+      - { regexp: '^DB_PASSWORD', line: "DB_PASSWORD={{ DB_PASSWORD }}" }
+      - { regexp: '^DB_DATABASE', line: "DB_DATABASE={{ DB_DATABASE }}" }
+      - { regexp: '^AMQP_HOST', line: "AMQP_HOST={{ AMQP_HOST }}" }
+      - { regexp: '^AMQP_PORT', line: "AMQP_PORT={{ AMQP_PORT }}" }
+      - { regexp: '^AMQP_USER', line: "AMQP_USER={{ AMQP_USER }}" }
+      - { regexp: '^AMQP_PASS', line: "AMQP_PASS={{ AMQP_PASS }}" }
+      - { regexp: '^AMQP_VHOST', line: "AMQP_VHOST={{ AMQP_VHOST }}" }
+      - { regexp: '^AMQP_EXCHANGE_NAME', line: "AMQP_EXCHANGE_NAME={{ AMQP_EXCHANGE_NAME }}" }
+      - { regexp: '^AMQP_EXCHANGE_TYPE', line: "AMQP_EXCHANGE_TYPE={{ AMQP_EXCHANGE_TYPE }}" }
+      - { regexp: '^AMQP_EXCHANGE_PASSIVE', line: "AMQP_EXCHANGE_PASSIVE={{ AMQP_EXCHANGE_PASSIVE }}" }
+      - { regexp: '^AMQP_EXCHANGE_DURABLE', line: "AMQP_EXCHANGE_DURABLE={{ AMQP_EXCHANGE_DURABLE }}" }
+      - { regexp: '^AMQP_EXCHANGE_AUTO_DELETE', line: "AMQP_EXCHANGE_AUTO_DELETE={{ AMQP_EXCHANGE_AUTO_DELETE }}" }
+      - { regexp: '^AMQP_EXCHANGE_EXCLUSIVE', line: "AMQP_EXCHANGE_EXCLUSIVE={{ AMQP_EXCHANGE_EXCLUSIVE }}" }
+      - { regexp: '^#TRUSTED_PROXIES=', line: "TRUSTED_PROXIES={{ TRUSTED_PROXIES }}" }

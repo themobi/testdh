@@ -1,0 +1,23 @@
+# roles/deploy/tasks/main.yml
+---
+  - name:  Deploy application
+    synchronize:
+      src: "{{ src_dir }}"
+      dest: "{{ deploy_path }}"
+      delete: "yes"
+      recursive: "yes"
+      rsync_opts:
+        - "--update"
+        - "--no-motd"
+        - "--exclude=build"
+        - "--exclude=composer.lock"
+        - "--exclude=deploy"
+        - "--exclude=.editorconfig"
+        - "--exclude=.env.example"
+        - "--exclude=.gitignore"
+        - "--exclude=.git"
+        - "--exclude=Jenkinsfile"
+        - "--exclude=phpunit.xml"
+        - "--exclude=README"
+        - "--exclude=tests"
+        - "--exclude=*.key"

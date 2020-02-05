@@ -1,0 +1,19 @@
+App\Domain\User\User:
+  type: entity
+  id:
+    userId:
+      column: id
+      type: UserId
+      generator:
+        strategy: AUTO
+  table: users
+  repositoryClass: App\Infrastructure\Domain\User\DoctrineUserRepository
+  fields:
+    name:
+      type: string
+    email:
+      type: string
+    password:
+      type: string
+    created_at:
+      type: datetime
